@@ -108,6 +108,86 @@ module.exports = {
         },
       },
 
+      animation: {
+        // Your existing animations...
+
+        // CSS-only scroll animations
+        "scroll-fade-in": "scrollFadeIn 0.8s ease-out both",
+        "scroll-fade-up": "scrollFadeUp 0.8s ease-out both",
+        "scroll-fade-down": "scrollFadeDown 0.8s ease-out both",
+        "scroll-fade-left": "scrollFadeLeft 0.8s ease-out both",
+        "scroll-fade-right": "scrollFadeRight 0.8s ease-out both",
+        "scroll-scale": "scrollScale 0.8s ease-out both",
+        "scroll-stagger-1": "scrollFadeUp 0.8s ease-out 0.1s both",
+        "scroll-stagger-2": "scrollFadeUp 0.8s ease-out 0.2s both",
+        "scroll-stagger-3": "scrollFadeUp 0.8s ease-out 0.3s both",
+        "scroll-stagger-4": "scrollFadeUp 0.8s ease-out 0.4s both",
+      },
+
+      keyframes: {
+        // Your existing keyframes...
+
+        // CSS-only scroll animation keyframes
+        scrollFadeIn: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          },
+        },
+        scrollFadeUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        scrollFadeDown: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+        scrollFadeLeft: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        scrollFadeRight: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(40px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)",
+          },
+        },
+        scrollScale: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+      },
+
       // Custom Gradients
       backgroundImage: {
         // Hero and Header Gradients
@@ -357,9 +437,87 @@ module.exports = {
     },
   },
   plugins: [
-    // You can add plugins here if needed
-    // require('@tailwindcss/forms'),
-    // require('@tailwindcss/typography'),
-    // require('@tailwindcss/aspect-ratio'),
+    function ({ addUtilities, theme }) {
+      const scrollAnimations = {
+        // Base scroll animation utilities
+        ".scroll-animate": {
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        // Intersection Observer fallback using CSS
+        ".animate-on-scroll": {
+          opacity: "0",
+          transform: "translateY(40px)",
+          transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
+          "&.in-view": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+
+        // Scroll-triggered animations
+        ".scroll-fade-in": {
+          animation: "scrollFadeIn 0.8s ease-out both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-fade-up": {
+          animation: "scrollFadeUp 0.8s ease-out both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-fade-left": {
+          animation: "scrollFadeLeft 0.8s ease-out both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-fade-right": {
+          animation: "scrollFadeRight 0.8s ease-out both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        // Stagger effects
+        ".scroll-stagger-1": {
+          animation: "scrollFadeUp 0.8s ease-out 0.1s both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-stagger-2": {
+          animation: "scrollFadeUp 0.8s ease-out 0.2s both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-stagger-3": {
+          animation: "scrollFadeUp 0.8s ease-out 0.3s both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        ".scroll-stagger-4": {
+          animation: "scrollFadeUp 0.8s ease-out 0.4s both",
+          "animation-timeline": "view()",
+          "animation-range": "entry 0% cover 30%",
+        },
+
+        // Respect reduced motion preferences
+        "@media (prefers-reduced-motion: reduce)": {
+          ".scroll-fade-in, .scroll-fade-up, .scroll-fade-left, .scroll-fade-right, .scroll-stagger-1, .scroll-stagger-2, .scroll-stagger-3, .scroll-stagger-4":
+            {
+              animation: "none",
+              opacity: "1",
+              transform: "none",
+            },
+        },
+      };
+
+      addUtilities(scrollAnimations);
+    },
   ],
 };

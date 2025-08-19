@@ -5,6 +5,7 @@ import kataragamaImg from "../../assets/images/kataragama.jpg";
 import tangalleImg from "../../assets/images/tangalle.jpg";
 import yalaImg from "../../assets/images/yala.jpg";
 import hikkaduwaImg from "../../assets/images/hikkaduwa.jpg";
+import Button from "../common/Button";
 
 const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,7 +14,7 @@ const HeroSection: React.FC = () => {
   const slides = [
     {
       id: 1,
-      title: "Discover Ancient Hambantota's Hidden Treasures",
+      title: "Discover Ancient Hambantota's Treasures",
       description:
         "Journey through Sri Lanka's historic southern port city. Explore the magnificent Hambantota Museum, climb the iconic Matelo Tower, and witness the Old Light House guiding ships for centuries. Walk among the mystical Gallows Tree and visit ancient Buddhist temples that tell stories of maritime heritage.",
       image: hambantotaImg,
@@ -121,10 +122,9 @@ const HeroSection: React.FC = () => {
 
               {/* Get In Touch Button with Enhanced Styling */}
               <div className="relative flex justify-center sm:justify-start">
-                <button className="bg-white/95 backdrop-blur-sm hover:bg-white text-midnight font-sans font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-ceylon-500/20 flex items-center gap-2 sm:gap-3 animate-fade-in-up border border-white/20 text-sm sm:text-lg">
-                  <span>Get In Touch</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </button>
+                <Button variant="primary" size="lg">
+                  Book Now{" "}
+                </Button>
               </div>
             </div>
           </div>

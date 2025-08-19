@@ -61,7 +61,6 @@ const Navbar: React.FC = () => {
 
           {/* Right side navigation items - hidden on mobile */}
           <div className="hidden md:flex lg:space-x-8 md:space-x-4">
-            <NavLink href="#">Gallery</NavLink>
             <NavLink href="#">Tours</NavLink>
             <NavLink href="#">About</NavLink>
             <NavLink href="#">Pricing</NavLink>

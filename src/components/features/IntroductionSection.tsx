@@ -99,7 +99,7 @@ const IntroductionSection: React.FC = () => {
                 Let's make it unforgettable!
               </p>
               <Button className="mt-4" variant="primary" size="lg">
-                Book Now{" "}
+                Contact Us
               </Button>
             </div>
           </div>

@@ -63,8 +63,8 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex lg:space-x-8 md:space-x-4">
             <NavLink href="#">Tours</NavLink>
             <NavLink href="#">About</NavLink>
-            <NavLink href="#">Pricing</NavLink>
-            <NavLink href="#">Account</NavLink>
+            <NavLink href="#">Why Us</NavLink>
+            <NavLink href="#">Quick Links</NavLink>
           </div>
 
           {/* Mobile overlay to close menu */}

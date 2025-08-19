@@ -114,14 +114,12 @@ const Footer: React.FC = () => {
 
           {/* Right side - Contact info (hidden on mobile) */}
           <div className="hidden md:flex lg:space-x-8 md:space-x-4 flex-col text-right">
-            <div className="space-y-1 mb-4">
-              <p className="text-midnight font-sans text-sm">
-                2972 Westheimer Rd. Santa Ana,
-              </p>
-              <p className="text-midnight font-sans text-sm">Illinois 85486</p>
+            <div className="space-y-1 mb-1">
+              <p className="text-midnight font-sans text-sm">Hambantota </p>
+              <p className="text-midnight font-sans text-sm">Sri Lanka</p>
             </div>
             <p className="text-midnight font-sans text-sm font-medium">
-              (+1) 404-532-4213
+              <a href="tel:+94768668109">(+94) 76 866 8109</a>
             </p>
           </div>
 

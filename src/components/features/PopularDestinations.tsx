@@ -90,15 +90,18 @@ const PopularDestinations: React.FC = () => {
           <div>
             <h2 className="text-3xl lg:text-4xl xl:text-5xl font-sans font-light text-midnight leading-tight mb-4">
               Popular{" "}
-              <span className="text-steel font-light">
-                Destinations in 2024
-              </span>
+              <span className="text-steel font-light">Destinations in</span>
             </h2>
             <p className="text-lg text-steel max-w-2xl font-sans leading-relaxed">
-              Discover 2024's popular destinations, offering stunning
-              landscapes, vibrant cultures, and unforgettable experiences for
-              every traveler.
+              Discover popular destinations, offering stunning landscapes,
+              vibrant cultures, and unforgettable experiences for every
+              traveler.
             </p>
+          </div>
+          <div className="text-center animate-on-scroll hidden lg:flex">
+            <Button variant="primary" size="lg">
+              Contact Us{" "}
+            </Button>
           </div>
         </div>
 
@@ -138,8 +141,8 @@ const PopularDestinations: React.FC = () => {
                 </p>
 
                 {/* Book Now Button */}
-                <div className="pt-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  <Button variant="ghost" size="sm">
+                <div className="pt-2 opacity-100 transform translate-y-0">
+                  <Button variant="outline" size="sm">
                     Explore Now
                   </Button>
                 </div>
@@ -149,7 +152,7 @@ const PopularDestinations: React.FC = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center animate-on-scroll">
+        <div className="text-center animate-on-scroll lg:hidden">
           <Button variant="primary" size="lg">
             Contact Us{" "}
           </Button>

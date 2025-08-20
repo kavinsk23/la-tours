@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import hambantotaImg from "../../assets/images/hambantota.jpg";
 import kataragamaImg from "../../assets/images/kataragama.jpg";
 import tangalleImg from "../../assets/images/tangalle.jpg";

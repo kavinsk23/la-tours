@@ -1,6 +1,88 @@
 import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
 import GalleryPopup from "../common/GalleryPopup";
+import hambantota1 from "../../assets/images/hambantota/IMG4494.jpg";
+import hambantota2 from "../../assets/images/hambantota/IMG_4495.jpg";
+import hambantota3 from "../../assets/images/hambantota/IMG_4496.jpg";
+import hambantota4 from "../../assets/images/hambantota/IMG_4497.jpg";
+import hambantota5 from "../../assets/images/hambantota/IMG_4498.jpg";
+import hambantota6 from "../../assets/images/hambantota/IMG_4499.jpg";
+import hambantota7 from "../../assets/images/hambantota/img4500.jpg";
+
+import ella1 from "../../assets/images/ella/Image (10).jpg";
+import ella2 from "../../assets/images/ella/Image (3).jpg";
+import ella3 from "../../assets/images/ella/Image (4).jpg";
+import ella4 from "../../assets/images/ella/Image (5).jpg";
+import ella5 from "../../assets/images/ella/Image (6).jpg";
+import ella6 from "../../assets/images/ella/Image (7).jpg";
+import ella7 from "../../assets/images/ella/Image (8).jpg";
+import ella8 from "../../assets/images/ella/Image (9).jpg";
+
+import kataragama1 from "../../assets/images/kataragama/Image (3).jpg";
+import kataragama2 from "../../assets/images/kataragama/Image (4).jpg";
+import kataragama3 from "../../assets/images/kataragama/Image (5).jpg";
+import kataragama4 from "../../assets/images/kataragama/Image (6).jpg";
+import kataragama5 from "../../assets/images/kataragama/Image (7).jpg";
+import kataragama6 from "../../assets/images/kataragama/Image (8).jpg";
+import kataragama7 from "../../assets/images/kataragama/Image (9).jpg";
+import kataragama8 from "../../assets/images/kataragama/Image (10).jpg";
+import kataragama9 from "../../assets/images/kataragama/Image (11).jpg";
+import kataragama10 from "../../assets/images/kataragama/Image (12).jpg";
+
+import tangalle1 from "../../assets/images/tangalle/Image (3).jpg";
+import tangalle2 from "../../assets/images/tangalle/Image (4).jpg";
+import tangalle3 from "../../assets/images/tangalle/Image (5).jpg";
+import tangalle4 from "../../assets/images/tangalle/Image (6).jpg";
+import tangalle5 from "../../assets/images/tangalle/Image (7).jpg";
+import tangalle6 from "../../assets/images/tangalle/Image (8).jpg";
+import tangalle7 from "../../assets/images/tangalle/Image (9).jpg";
+import tangalle8 from "../../assets/images/tangalle/Image (10).jpg";
+import tangalle9 from "../../assets/images/tangalle/Image (11).jpg";
+import tangalle10 from "../../assets/images/tangalle/Image (12).jpg";
+
+import yala1 from "../../assets/images/yala/Image (3).jpg";
+import yala2 from "../../assets/images/yala/Image (4).jpg";
+import yala3 from "../../assets/images/yala/Image (5).jpg";
+import yala4 from "../../assets/images/yala/Image (6).jpg";
+import yala5 from "../../assets/images/yala/Image (7).jpg";
+import yala6 from "../../assets/images/yala/Image (8).jpg";
+import yala7 from "../../assets/images/yala/Image (9).jpg";
+import yala8 from "../../assets/images/yala/Image (10).jpg";
+import yala9 from "../../assets/images/yala/Image (11).jpg";
+import yala10 from "../../assets/images/yala/Image (12).jpg";
+import yala11 from "../../assets/images/yala/Image (13).jpg";
+import yala12 from "../../assets/images/yala/Image (14).jpg";
+import yala13 from "../../assets/images/yala/Image (15).jpg";
+import yala14 from "../../assets/images/yala/Image (16).jpg";
+import yala15 from "../../assets/images/yala/Image (17).jpg";
+import yala16 from "../../assets/images/yala/Image (18).jpg";
+import yala17 from "../../assets/images/yala/Image (19).jpg";
+import yala18 from "../../assets/images/yala/Image (20).jpg";
+
+import hikkaduwa1 from "../../assets/images/hikkaduwa/Image (3).jpg";
+import hikkaduwa2 from "../../assets/images/hikkaduwa/Image (4).jpg";
+import hikkaduwa3 from "../../assets/images/hikkaduwa/Image (5).jpg";
+import hikkaduwa4 from "../../assets/images/hikkaduwa/Image (6).jpg";
+import hikkaduwa5 from "../../assets/images/hikkaduwa/Image (7).jpg";
+import hikkaduwa6 from "../../assets/images/hikkaduwa/Image (8).jpg";
+import hikkaduwa7 from "../../assets/images/hikkaduwa/Image (9).jpg";
+import hikkaduwa8 from "../../assets/images/hikkaduwa/Image (10).jpg";
+import hikkaduwa9 from "../../assets/images/hikkaduwa/Image (11).jpg";
+import hikkaduwa10 from "../../assets/images/hikkaduwa/Image (12).jpg";
+import hikkaduwa11 from "../../assets/images/hikkaduwa/Image (13).jpg";
+import hikkaduwa12 from "../../assets/images/hikkaduwa/Image (14).jpg";
+import hikkaduwa13 from "../../assets/images/hikkaduwa/Image (15).jpg";
+import hikkaduwa14 from "../../assets/images/hikkaduwa/Image (16).jpg";
+import hikkaduwa15 from "../../assets/images/hikkaduwa/Image (17).jpg";
+import hikkaduwa16 from "../../assets/images/hikkaduwa/Image (18).jpg";
+import hikkaduwa17 from "../../assets/images/hikkaduwa/Image (19).jpg";
+import hikkaduwa18 from "../../assets/images/hikkaduwa/Image (20).jpg";
+import hikkaduwa19 from "../../assets/images/hikkaduwa/Image (21).jpg";
+import hikkaduwa20 from "../../assets/images/hikkaduwa/Image (22).jpg";
+import hikkaduwa21 from "../../assets/images/hikkaduwa/Image (23).jpg";
+import hikkaduwa22 from "../../assets/images/hikkaduwa/Image (24).jpg";
+import hikkaduwa23 from "../../assets/images/hikkaduwa/Image (25).jpg";
+import hikkaduwa24 from "../../assets/images/hikkaduwa/Image (26).jpg";
 
 const PopularDestinations: React.FC = () => {
   const [selectedDestination, setSelectedDestination] = useState<number | null>(
@@ -51,7 +133,8 @@ const PopularDestinations: React.FC = () => {
     {
       id: 1,
       title: "Sigiriya Rock Fortress",
-      image: "",
+      image: "../../assets/images/hambantota/IMG_4498.JPG",
+
       locations: [
         "Ancient fortress ruins",
         "Lion's Gate entrance",
@@ -59,7 +142,14 @@ const PopularDestinations: React.FC = () => {
         "Summit palace remains",
         "Water gardens below",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        "../../assets/images/hambantota/IMG_4494.JPG",
+        "../../assets/images/hambantota/IMG_4495.JPG",
+        "../../assets/images/hambantota/IMG_4496.JPG",
+        "../../assets/images/hambantota/IMG_4497.JPG",
+        "../../assets/images/hambantota/IMG_4498.JPG",
+        "../../assets/images/hambantota/IMG_4499.JPG",
+      ],
     },
     {
       id: 2,
@@ -77,7 +167,7 @@ const PopularDestinations: React.FC = () => {
     {
       id: 3,
       title: "Ella Adventure Tour",
-      image: "",
+      image: ella6,
       locations: [
         "Rawana water fall",
         "Rawana cave",
@@ -87,12 +177,12 @@ const PopularDestinations: React.FC = () => {
         "Tea plants",
         "Train ride (Demodara to Ella)",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [ella1, ella2, ella3, ella4, ella5, ella6, ella7, ella8],
     },
     {
       id: 4,
       title: "Yala National Park Safari",
-      image: "",
+      image: yala1,
       locations: [
         "Yala safari park",
         "Udawalawa park jeep safari",
@@ -100,7 +190,26 @@ const PopularDestinations: React.FC = () => {
         "Ridiyagama safari park",
         "Hot water springs",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        yala1,
+        yala2,
+        yala3,
+        yala4,
+        yala5,
+        yala6,
+        yala7,
+        yala8,
+        yala9,
+        yala10,
+        yala11,
+        yala12,
+        yala13,
+        yala14,
+        yala15,
+        yala16,
+        yala17,
+        yala18,
+      ],
     },
     {
       id: 5,
@@ -151,7 +260,7 @@ const PopularDestinations: React.FC = () => {
     {
       id: 8,
       title: "Hambantota Discovery Tour",
-      image: "",
+      image: hambantota5,
       locations: [
         "Hambantota city tour",
         "Hambantota museum",
@@ -164,12 +273,20 @@ const PopularDestinations: React.FC = () => {
         "Salt pans",
         "Fishing harbor",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        hambantota1,
+        hambantota2,
+        hambantota3,
+        hambantota4,
+        hambantota5,
+        hambantota6,
+        hambantota7,
+      ],
     },
     {
       id: 9,
       title: "Kataragama Spiritual Journey",
-      image: "",
+      image: kataragama7,
       locations: [
         "Ancient dewalaya",
         "Pooja city",
@@ -178,28 +295,86 @@ const PopularDestinations: React.FC = () => {
         "Kirinda beach",
         "Ancient temple ruins",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        kataragama1,
+        kataragama2,
+        kataragama3,
+        kataragama4,
+        kataragama5,
+        kataragama6,
+        kataragama7,
+        kataragama8,
+        kataragama9,
+        kataragama10,
+      ],
     },
+    // Hikkaduwa Beach Tour
     {
       id: 10,
-      title: "Tangalle & Hikkaduwa Beach Tour",
-      image: "",
+      title: "Hikkaduwa Beach Tour",
+      image: hikkaduwa21,
       locations: [
-        "Botanical gardens",
-        "Wewrukannala temple",
-        "Hiriketiya beach",
-        "Blow hole",
-        "Walawe river boat ride",
-        "Turtle watching",
-        "Turtle bathing experience",
         "Galle Dutch fort",
         "Jungle beach",
         "Koggala lake safari",
         "Cinnamon island tour",
         "Fish therapy & spa",
         "Unawatuna temple",
+        "Turtle watching",
+        "Turtle bathing experience",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        hikkaduwa1,
+        hikkaduwa2,
+        hikkaduwa3,
+        hikkaduwa4,
+        hikkaduwa5,
+        hikkaduwa6,
+        hikkaduwa7,
+        hikkaduwa8,
+        hikkaduwa9,
+        hikkaduwa10,
+        hikkaduwa11,
+        hikkaduwa12,
+        hikkaduwa13,
+        hikkaduwa14,
+        hikkaduwa15,
+        hikkaduwa16,
+        hikkaduwa17,
+        hikkaduwa18,
+        hikkaduwa19,
+        hikkaduwa20,
+        hikkaduwa21,
+        hikkaduwa22,
+        hikkaduwa23,
+        hikkaduwa24,
+      ],
+    },
+
+    // Tangalle Beach Tour
+    {
+      id: 11,
+      title: "Tangalle Beach Tour",
+      image: tangalle1,
+      locations: [
+        "Botanical gardens",
+        "Wewrukannala temple",
+        "Hiriketiya beach",
+        "Blow hole",
+        "Walawe river boat ride",
+      ],
+      gallery: [
+        tangalle1,
+        tangalle2,
+        tangalle3,
+        tangalle4,
+        tangalle5,
+        tangalle6,
+        tangalle7,
+        tangalle8,
+        tangalle9,
+        tangalle10,
+      ],
     },
   ];
 

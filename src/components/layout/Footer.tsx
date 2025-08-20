@@ -246,22 +246,6 @@ const Footer: React.FC = () => {
             </a>{" "}
             All Rights Reserved.
           </p>
-
-          <div className="flex space-x-6">
-            <a
-              href="#"
-              className="text-midnight hover:text-ceylon-600 transition-colors duration-300 font-sans text-sm"
-            >
-              Terms & Conditions
-            </a>
-            <span className="text-steel">|</span>
-            <a
-              href="#"
-              className="text-midnight hover:text-ceylon-600 transition-colors duration-300 font-sans text-sm"
-            >
-              Privacy Policy
-            </a>
-          </div>
         </div>
       </div>
     </footer>

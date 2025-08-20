@@ -42,7 +42,7 @@ const IntroductionSection: React.FC = () => {
       description: "Tours completed yearly",
     },
     {
-      number: "50+",
+      number: "100+",
       label: "Destinations",
       description: "Unique locations",
     },

@@ -21,7 +21,7 @@ function App() {
       <VehicleRental />
       <HeroCTASection />
       <Footer />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </div>
   );
 }

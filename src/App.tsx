@@ -12,7 +12,7 @@ import VehicleRental from "./components/features/VehicleRental";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App w-screen max-w-full overflow-x-hidden">
       <Navbar />
       <HeroSection />
       <IntroductionSection />

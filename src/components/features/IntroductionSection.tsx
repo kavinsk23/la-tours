@@ -54,7 +54,7 @@ const IntroductionSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section id="about" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header with Animation */}
         <div className="flex items-center mb-12 lg:mb-16 animate-on-scroll">
@@ -98,8 +98,21 @@ const IntroductionSection: React.FC = () => {
                 </span>{" "}
                 Let's make it unforgettable!
               </p>
-              <Button className="mt-4" variant="primary" size="lg">
-                Contact Us
+              <Button
+                className="mt-4"
+                variant="primary"
+                size="lg"
+                onClick={() => {
+                  const message = encodeURIComponent(
+                    "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
+                  );
+                  window.open(
+                    `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                    "_blank"
+                  );
+                }}
+              >
+                Contact Us{" "}
               </Button>
             </div>
           </div>

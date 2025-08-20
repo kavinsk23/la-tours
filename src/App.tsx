@@ -9,6 +9,7 @@ import PopularDestinations from "./components/features/PopularDestinations";
 import HeroCTASection from "./components/features/HeroCTASection";
 import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/common/ScrollToTop";
+import VehicleRental from "./components/features/VehicleRental";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <IntroductionSection />
       <WhyChooseUs />
       <PopularDestinations />
+      <VehicleRental />
       <HeroCTASection />
       <Footer />
       <ScrollToTop />

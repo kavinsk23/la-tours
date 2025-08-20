@@ -74,6 +74,15 @@ const HeroCTASection: React.FC = () => {
               variant="primary"
               size="xl"
               className="bg-white/90 text-midnight hover:bg-white hover:scale-110 border-2 border-white/20 hover:border-ceylon-300 shadow-2xl hover:shadow-ceylon-500/30"
+              onClick={() => {
+                const message = encodeURIComponent(
+                  "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
+                );
+                window.open(
+                  `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                  "_blank"
+                );
+              }}
             >
               Book Now{" "}
             </Button>

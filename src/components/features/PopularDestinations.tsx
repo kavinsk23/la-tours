@@ -232,7 +232,7 @@ const PopularDestinations: React.FC = () => {
             {destinations.map((destination, index) => (
               <div
                 key={destination.id}
-                className={`group cursor-pointer animate-on-scroll-scale animate-stagger-${Math.min(
+                className={`relative group cursor-pointer animate-on-scroll-scale animate-stagger-${Math.min(
                   index + 1,
                   4
                 )}`}
@@ -278,13 +278,61 @@ const PopularDestinations: React.FC = () => {
                         </div>
                       ))}
                     </div>
-                  </div>
-
-                  {/* Book Now Button */}
-                  <div className="pt-2 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                    <Button variant="ghost" size="sm">
-                      Explore Now
-                    </Button>
+                    {/* Book Now Button */}
+                    <div className="pt-2 transform translate-y-2 transition-all duration-300 mt-auto absolute bottom-0">
+                      <div className="flex gap-3">
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => {
+                            const message = encodeURIComponent(
+                              `Hi! I'm interested in booking the ${destination.title} tour. Could you please provide pricing and availability?`
+                            );
+                            window.open(
+                              `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                              "_blank"
+                            );
+                          }}
+                        >
+                          Book Now
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => openGallery(destination.id)}
+                        >
+                          View Gallery
+                        </Button>
+                      </div>
+                    </div>
+                    <div className="pt-2 transform translate-y-2 transition-all duration-300 mt-auto invisible">
+                      <div className="flex gap-3">
+                        <Button
+                          variant="primary"
+                          size="sm"
+                          className="flex-1"
+                          onClick={() => {
+                            const message = encodeURIComponent(
+                              `Hi! I'm interested in booking the ${destination.title} tour. Could you please provide pricing and availability?`
+                            );
+                            window.open(
+                              `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                              "_blank"
+                            );
+                          }}
+                        >
+                          Book Now
+                        </Button>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => openGallery(destination.id)}
+                        >
+                          View Gallery
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

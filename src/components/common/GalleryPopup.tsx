@@ -1,5 +1,5 @@
 // components/GalleryPopup.tsx
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface GalleryPopupProps {
@@ -17,11 +17,21 @@ const GalleryPopup: React.FC<GalleryPopupProps> = ({
   onClose,
   title,
 }) => {
-  const [currentIndex, setCurrentIndex] = React.useState(initialIndex);
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
 
   useEffect(() => {
     setCurrentIndex(initialIndex);
   }, [initialIndex, isOpen]);
+
+  const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+
+  const handlePrev = useCallback(() => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  }, [images.length]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -38,17 +48,7 @@ const GalleryPopup: React.FC<GalleryPopupProps> = ({
 
     document.addEventListener("keydown", handleKeyDown);
     return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, currentIndex, images.length]);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
-  };
+  }, [isOpen, onClose, handleNext, handlePrev]);
 
   if (!isOpen) return null;
 
@@ -88,7 +88,7 @@ const GalleryPopup: React.FC<GalleryPopupProps> = ({
         <div className="relative">
           <img
             src={images[currentIndex]}
-            alt={`${title} - Image ${currentIndex + 1}`}
+            alt={`${title} view ${currentIndex + 1}`}
             className="max-w-full max-h-[80vh] object-contain rounded-lg"
           />
 

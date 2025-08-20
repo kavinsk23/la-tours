@@ -1,5 +1,5 @@
 import React, { useState, ReactNode } from "react";
-import { Facebook, Instagram, MessageCircle, Send, Star } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Send } from "lucide-react";
 
 interface NavLinkProps {
   href: string;

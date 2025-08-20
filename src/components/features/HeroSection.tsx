@@ -5,6 +5,11 @@ import kataragamaImg from "../../assets/images/kataragama.jpg";
 import tangalleImg from "../../assets/images/tangalle.jpg";
 import yalaImg from "../../assets/images/yala.jpg";
 import hikkaduwaImg from "../../assets/images/hikkaduwa.jpg";
+import ellaImg from "../../assets/images/ella.jpg";
+import kandyImg from "../../assets/images/kandy.jpg";
+import nuwaraeliyaImg from "../../assets/images/nuwaraeliya.jpg";
+import trincomaleeImg from "../../assets/images/trincomalee.jpg";
+
 import Button from "../common/Button";
 
 const HeroSection: React.FC = () => {
@@ -51,6 +56,41 @@ const HeroSection: React.FC = () => {
         "Dive into Hikkaduwa's underwater paradise for turtle watching and coral reef exploration. Experience traditional turtle bathing rituals, visit Galle Dutch Port's colonial architecture, and enjoy jungle beach adventures. Cruise Kogala Lake watching exotic animals while savoring authentic cinnamon tea and local delicacies.",
       image: hikkaduwaImg,
       categories: ["Marine", "Turtles", "Diving", "Colonial"],
+    },
+    {
+      id: 3,
+      title: "Ella Adventure & Tea Country",
+      description:
+        "Journey through Ella's breathtaking hill country with visits to iconic Rawana Waterfall and mystical caves. Hike to Little Adams Peak for panoramic views, cross the famous Nine Arch Bridge, and experience authentic train travel from Demodara to Ella through lush tea plantations while learning about traditional tea cultivation.",
+      image: ellaImg,
+      categories: ["Adventure", "Tea", "Hiking", "Railway"],
+    },
+
+    {
+      id: 6,
+      title: "Nuwara Eliya Highland Paradise",
+      description:
+        "Explore 'Little England' with its colonial charm, from bustling Nuwara Eliya town to the dramatic World's End cliff. Visit Victoria Flower Gardens, enjoy Gregory Lake boat rides, discover the historic Gampola Tunnel, and climb Ambuluwawa Tower while touring authentic tea factories in the misty highlands.",
+      image: nuwaraeliyaImg,
+      categories: ["Highland", "Colonial", "Tea", "Scenic"],
+    },
+
+    {
+      id: 2,
+      title: "Kandy Cultural Heritage Journey",
+      description:
+        "Immerse yourself in Sri Lanka's cultural heart with visits to the sacred Temple of the Tooth Relic and ancient Dambulla Cave Temples. Explore the majestic Sigiriya Rock Fortress, climb Pidurangala for sunrise views, and experience thrilling Habarana jeep safaris through diverse wildlife habitats.",
+      image: kandyImg,
+      categories: ["Cultural", "Heritage", "Safari", "Spiritual"],
+    },
+
+    {
+      id: 5,
+      title: "Trincomalee Coastal Paradise",
+      description:
+        "Experience stunning Nilaveli beach sunsets and exhilarating sea boat adventures along pristine coastlines. Explore historic Trincomalee town, visit the ancient Koneshwaram Temple, relax on exclusive Marble Beach, and cross the magnificent Kinniya Bridge - Sri Lanka's longest span connecting coastal communities.",
+      image: trincomaleeImg,
+      categories: ["Coastal", "Beaches", "Historic", "Temple"],
     },
   ];
   // Auto scroll functionality

@@ -171,7 +171,7 @@ const HeroSection: React.FC = () => {
                       "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
                     );
                     window.open(
-                      `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                      `https://wa.me/94779941056?text=${message}`,
                       "_blank"
                     );
                   }}

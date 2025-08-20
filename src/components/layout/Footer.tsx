@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
     },
     {
       name: "WhatsApp",
-      href: "https://wa.me/qr/CZCRXE7A5DLSM1",
+      href: "https://wa.me/94779941056",
       icon: MessageCircle,
       color: "hover:text-green-600",
     },

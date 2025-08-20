@@ -78,6 +78,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
+      id="home"
       className="relative overflow-hidden"
       style={{ height: "calc(100vh - 64px)" }}
     >
@@ -122,8 +123,20 @@ const HeroSection: React.FC = () => {
 
               {/* Get In Touch Button with Enhanced Styling */}
               <div className="relative flex justify-center sm:justify-start">
-                <Button variant="primary" size="lg">
-                  Book Now{" "}
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => {
+                    const message = encodeURIComponent(
+                      "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
+                    );
+                    window.open(
+                      `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                      "_blank"
+                    );
+                  }}
+                >
+                  Book Now
                 </Button>
               </div>
             </div>

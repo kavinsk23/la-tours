@@ -46,10 +46,10 @@ const Navbar: React.FC = () => {
 
           {/* Left side navigation items - hidden on mobile */}
           <div className="hidden md:flex lg:space-x-8 md:space-x-4">
-            <NavLink href="#">Home</NavLink>
-            <NavLink href="#">Destination</NavLink>
-            <NavLink href="#">Travel Package</NavLink>
-            <NavLink href="#">Gallery</NavLink>
+            <NavLink href="#home">Home</NavLink>
+            <NavLink href="#destinations">Destinations</NavLink>
+            <NavLink href="#rental"> Vehicle Rental</NavLink>
+            <NavLink href="#destinations">Gallery</NavLink>
           </div>
 
           {/* Center logo */}
@@ -61,10 +61,10 @@ const Navbar: React.FC = () => {
 
           {/* Right side navigation items - hidden on mobile */}
           <div className="hidden md:flex lg:space-x-8 md:space-x-4">
-            <NavLink href="#">Tours</NavLink>
-            <NavLink href="#">About</NavLink>
-            <NavLink href="#">Why Us</NavLink>
-            <NavLink href="#">Quick Links</NavLink>
+            <NavLink href="#destinations">Tours</NavLink>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#whyus">Why Us</NavLink>
+            <NavLink href="#footer">Quick Links</NavLink>
           </div>
 
           {/* Mobile overlay to close menu */}
@@ -85,16 +85,22 @@ const Navbar: React.FC = () => {
                 <div className="text-xs font-semibold text-ceylon-600 uppercase tracking-wide px-3 py-1 border-b border-ceylon-100 mb-2">
                   Main Menu
                 </div>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
+                <MobileNavLink href="#home" onClick={() => setIsOpen(false)}>
                   Home
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
-                  Destination
+                <MobileNavLink
+                  href="#destinations"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Destinations
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
-                  Travel Package
+                <MobileNavLink href="#rental" onClick={() => setIsOpen(false)}>
+                  Vehicle Rental
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
+                <MobileNavLink
+                  href="#destinations"
+                  onClick={() => setIsOpen(false)}
+                >
                   Gallery
                 </MobileNavLink>
               </div>
@@ -104,17 +110,20 @@ const Navbar: React.FC = () => {
                 <div className="text-xs font-semibold text-ceylon-600 uppercase tracking-wide px-3 py-1 mb-2">
                   Quick Access
                 </div>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
+                <MobileNavLink
+                  href="#destinations"
+                  onClick={() => setIsOpen(false)}
+                >
                   Tours
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
+                <MobileNavLink href="#about" onClick={() => setIsOpen(false)}>
                   About
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
-                  Pricing
+                <MobileNavLink href="#whyus" onClick={() => setIsOpen(false)}>
+                  Why Us
                 </MobileNavLink>
-                <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
-                  Account
+                <MobileNavLink href="#footer" onClick={() => setIsOpen(false)}>
+                  Quick Links
                 </MobileNavLink>
               </div>
             </div>

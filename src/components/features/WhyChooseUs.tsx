@@ -60,7 +60,7 @@ const WhyChooseUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 lg:py-24 bg-white">
+    <section id="whyus" className="py-16 lg:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header with Animation */}
         <div className="flex items-center mb-12 lg:mb-16 animate-on-scroll">
@@ -83,8 +83,20 @@ const WhyChooseUs: React.FC = () => {
             </h3>
           </div>
           <div className="lg:flex hidden">
-            <Button className="mt-4" variant="primary" size="lg">
-              Book Now{" "}
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => {
+                const message = encodeURIComponent(
+                  "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
+                );
+                window.open(
+                  `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                  "_blank"
+                );
+              }}
+            >
+              Book Now
             </Button>
           </div>
         </div>
@@ -144,8 +156,20 @@ const WhyChooseUs: React.FC = () => {
 
         {/* Mobile Learn More Button */}
         <div className="lg:hidden text-center animate-on-scroll">
-          <Button className="mt-4" variant="primary" size="lg">
-            Book Now{" "}
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => {
+              const message = encodeURIComponent(
+                "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
+              );
+              window.open(
+                `https://wa.me/qr/CZCRXE7A5DLSM1?text=${message}`,
+                "_blank"
+              );
+            }}
+          >
+            Book Now
           </Button>
         </div>
 

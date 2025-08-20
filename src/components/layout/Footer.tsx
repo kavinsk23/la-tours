@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-cloud text-midnight-dark shadow-sm">
+    <footer id="footer" className="bg-cloud text-midnight-dark shadow-sm">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         {/* Top Section - Same structure as navbar */}
         <div className="flex items-center justify-between h-14 sm:h-16 py-12 lg:py-16">
@@ -136,14 +136,12 @@ const Footer: React.FC = () => {
         <div className="md:hidden py-6 space-y-4">
           {/* Contact Info Mobile */}
           <div className="space-y-1 px-3 py-3 bg-ceylon-50 rounded-lg">
+            <div className="space-y-1 mb-1">
+              <p className="text-midnight font-sans text-sm">Hambantota </p>
+              <p className="text-midnight font-sans text-sm">Sri Lanka</p>
+            </div>
             <p className="text-midnight font-sans text-sm font-medium">
-              Contact Us
-            </p>
-            <p className="text-midnight font-sans text-xs">
-              2972 Westheimer Rd. Santa Ana, Illinois 85486
-            </p>
-            <p className="text-midnight font-sans text-xs font-medium">
-              (+1) 404-532-4213
+              <a href="tel:+94768668109">(+94) 76 866 8109</a>
             </p>
           </div>
 
@@ -172,7 +170,7 @@ const Footer: React.FC = () => {
                   Destination
                 </MobileNavLink>
                 <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
-                  Travel Package
+                  Vehicle Rental
                 </MobileNavLink>
                 <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
                   Gallery
@@ -206,7 +204,7 @@ const Footer: React.FC = () => {
           <nav className="flex space-x-8">
             <NavLink href="#">Home</NavLink>
             <NavLink href="#">Destination</NavLink>
-            <NavLink href="#">Travel Package</NavLink>
+            <NavLink href="#"> Vehicle Rental</NavLink>
             <NavLink href="#">Gallery</NavLink>
             <NavLink href="#">Tours</NavLink>
             <NavLink href="#">About</NavLink>

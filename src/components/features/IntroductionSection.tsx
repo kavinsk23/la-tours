@@ -128,7 +128,7 @@ const IntroductionSection: React.FC = () => {
                 />
               </div>
               {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-ceylon-100 rounded-2xl -z-10"></div>
+              {/* <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-ceylon-100 rounded-2xl -z-10"></div> */}
             </div>
           </div>
         </div>

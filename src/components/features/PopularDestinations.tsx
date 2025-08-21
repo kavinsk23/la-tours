@@ -84,6 +84,50 @@ import hikkaduwa22 from "../../assets/images/hikkaduwa/Image (24).jpg";
 import hikkaduwa23 from "../../assets/images/hikkaduwa/Image (25).jpg";
 import hikkaduwa24 from "../../assets/images/hikkaduwa/Image (26).jpg";
 
+import sigiriya1 from "../../assets/images/sigiriya/Image (3).jpg";
+import sigiriya2 from "../../assets/images/sigiriya/Image (4).jpg";
+import sigiriya3 from "../../assets/images/sigiriya/Image (5).jpg";
+import sigiriya4 from "../../assets/images/sigiriya/Image (6).jpg";
+import sigiriya5 from "../../assets/images/sigiriya/Image (7).jpg";
+
+import kandy2 from "../../assets/images/kandy/Image (3).jpg";
+import kandy3 from "../../assets/images/kandy/Image (4).jpg";
+import kandy4 from "../../assets/images/kandy/Image (5).jpg";
+
+import tinco4 from "../../assets/images/trincomalee/Image (6).jpg";
+import tinco5 from "../../assets/images/trincomalee/Image (7).jpg";
+import tinco6 from "../../assets/images/trincomalee/Image (8).jpg";
+import tinco7 from "../../assets/images/trincomalee/Image (9).jpg";
+import tinco8 from "../../assets/images/trincomalee/Image (10).jpg";
+import tinco9 from "../../assets/images/trincomalee/Image (11).jpg";
+import tinco10 from "../../assets/images/trincomalee/Image (12).jpg";
+import tinco11 from "../../assets/images/trincomalee/Image (13).jpg";
+import tinco12 from "../../assets/images/trincomalee/Image (14).jpg";
+import tinco13 from "../../assets/images/trincomalee/Image (15).jpg";
+
+import nuvaraeliya1 from "../../assets/images/nuvaraeliya/Image (3).jpg";
+import nuvaraeliya2 from "../../assets/images/nuvaraeliya/Image (4).jpg";
+import nuvaraeliya3 from "../../assets/images/nuvaraeliya/Image (5).jpg";
+import nuvaraeliya4 from "../../assets/images/nuvaraeliya/Image (6).jpg";
+import nuvaraeliya5 from "../../assets/images/nuvaraeliya/Image (7).jpg";
+import nuvaraeliya6 from "../../assets/images/nuvaraeliya/Image (8).jpg";
+import nuvaraeliya7 from "../../assets/images/nuvaraeliya/Image (9).jpg";
+import nuvaraeliya8 from "../../assets/images/nuvaraeliya/Image (10).jpg";
+import nuvaraeliya9 from "../../assets/images/nuvaraeliya/Image (11).jpg";
+import nuvaraeliya10 from "../../assets/images/nuvaraeliya/Image (12).jpg";
+import nuvaraeliya11 from "../../assets/images/nuvaraeliya/Image (13).jpg";
+
+import ella21 from "../../assets/images/ella2/Image (3).jpg";
+import ella22 from "../../assets/images/ella2/Image (4).jpg";
+import ella23 from "../../assets/images/ella2/Image (5).jpg";
+import ella24 from "../../assets/images/ella2/Image (6).jpg";
+import ella25 from "../../assets/images/ella2/Image (7).jpg";
+import ella26 from "../../assets/images/ella2/Image (8).jpg";
+import ella27 from "../../assets/images/ella2/Image (9).jpg";
+import ella28 from "../../assets/images/ella2/Image (10).jpg";
+import ella29 from "../../assets/images/ella2/Image (11).jpg";
+import ella210 from "../../assets/images/ella2/Image (12).jpg";
+
 const PopularDestinations: React.FC = () => {
   const [selectedDestination, setSelectedDestination] = useState<number | null>(
     null
@@ -133,7 +177,7 @@ const PopularDestinations: React.FC = () => {
     {
       id: 1,
       title: "Sigiriya Rock Fortress",
-      image: "../../assets/images/hambantota/IMG_4498.JPG",
+      image: sigiriya1,
 
       locations: [
         "Ancient fortress ruins",
@@ -142,19 +186,12 @@ const PopularDestinations: React.FC = () => {
         "Summit palace remains",
         "Water gardens below",
       ],
-      gallery: [
-        "../../assets/images/hambantota/IMG_4494.JPG",
-        "../../assets/images/hambantota/IMG_4495.JPG",
-        "../../assets/images/hambantota/IMG_4496.JPG",
-        "../../assets/images/hambantota/IMG_4497.JPG",
-        "../../assets/images/hambantota/IMG_4498.JPG",
-        "../../assets/images/hambantota/IMG_4499.JPG",
-      ],
+      gallery: [sigiriya1, sigiriya2, sigiriya3, sigiriya4, sigiriya5],
     },
     {
       id: 2,
       title: "Kandy Cultural Tour",
-      image: "",
+      image: kandy2,
       locations: [
         "Temple of the tooth relic",
         "Cave temple at Dambulla",
@@ -162,7 +199,7 @@ const PopularDestinations: React.FC = () => {
         "Pidurangala",
         "Habarana Jeep safari",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [kandy2, kandy3, kandy4],
     },
     {
       id: 3,
@@ -214,7 +251,7 @@ const PopularDestinations: React.FC = () => {
     {
       id: 5,
       title: "Trincomalee Coastal Tour",
-      image: "",
+      image: tinco9,
       locations: [
         "Nilaveli beach sunset",
         "Sea boat riding",
@@ -223,12 +260,23 @@ const PopularDestinations: React.FC = () => {
         "Marble beach",
         "Kinniya bridge (longest in SL)",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        tinco4,
+        tinco5,
+        tinco6,
+        tinco7,
+        tinco8,
+        tinco9,
+        tinco10,
+        tinco11,
+        tinco12,
+        tinco13,
+      ],
     },
     {
       id: 6,
       title: "Nuwara Eliya Hill Country",
-      image: "",
+      image: nuvaraeliya3,
       locations: [
         "Nuwara Eliya town",
         "World's End",
@@ -239,12 +287,24 @@ const PopularDestinations: React.FC = () => {
         "Ambuluwawa tower",
         "Tea factory",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        nuvaraeliya1,
+        nuvaraeliya2,
+        nuvaraeliya3,
+        nuvaraeliya4,
+        nuvaraeliya5,
+        nuvaraeliya6,
+        nuvaraeliya7,
+        nuvaraeliya8,
+        nuvaraeliya9,
+        nuvaraeliya10,
+        nuvaraeliya11,
+      ],
     },
     {
       id: 7,
       title: "Ella Extended Tour",
-      image: "",
+      image: ella210,
       locations: [
         "Buduruwagala temple",
         "Diyaluma waterfall",
@@ -255,7 +315,17 @@ const PopularDestinations: React.FC = () => {
         "Ella City",
         "Rawana waterfall",
       ],
-      gallery: ["", "", "", "", ""],
+      gallery: [
+        ella21,
+        ella22,
+        ella23,
+        ella24,
+        ella25,
+        ella26,
+        ella27,
+        ella28,
+        ella210,
+      ],
     },
     {
       id: 8,

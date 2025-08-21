@@ -3,6 +3,13 @@ import { Users, Fuel, Settings, MapPin } from "lucide-react";
 import Button from "../common/Button";
 import GalleryPopup from "../common/GalleryPopup";
 
+import rental1 from "../../assets/images/rental/Image (3).jpg";
+import rental2 from "../../assets/images/rental/Image (4).jpg";
+import rental3 from "../../assets/images/rental/Image (5).jpg";
+import rental4 from "../../assets/images/rental/Image (6).jpg";
+import rental5 from "../../assets/images/rental/Image (7).jpg";
+import rental6 from "../../assets/images/rental/Image (8).jpg";
+
 const VehicleRental: React.FC = () => {
   const [selectedVehicle, setSelectedVehicle] = useState<number | null>(null);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
@@ -48,30 +55,11 @@ const VehicleRental: React.FC = () => {
 
   const vehicles = [
     {
-      id: 1,
-      title: "Classic Scooter",
-      type: "Scooter",
-      description: "Perfect for city exploration and short coastal rides",
-      image: "",
-      engine: "125cc",
-      capacity: "2 persons",
-      fuelType: "Petrol",
-      transmission: "Automatic",
-      features: [
-        "Fuel efficient",
-        "Easy to ride",
-        "Under-seat storage",
-        "Electric start",
-      ],
-
-      gallery: ["", "", "", "", ""],
-    },
-    {
       id: 2,
-      title: "Adventure Scooter",
+      title: "Scooter",
       type: "Scooter",
       description: "Scooter for longer journeys and hill country exploration",
-      image: "",
+      image: rental5,
       engine: "150cc",
       capacity: "2 persons",
       fuelType: "Petrol",
@@ -83,26 +71,7 @@ const VehicleRental: React.FC = () => {
         "Comfortable seating",
       ],
 
-      gallery: ["", "", "", "", ""],
-    },
-    {
-      id: 3,
-      title: "Traditional Tuk Tuk",
-      type: "Tuk Tuk",
-      description: "Authentic three-wheeler experience with local charm",
-      image: "",
-      engine: "200cc",
-      capacity: "3 persons",
-      fuelType: "Petrol",
-      transmission: "Manual",
-      features: [
-        "Weather protection",
-        "Spacious seating",
-        "Luggage space",
-        "Local driver available",
-      ],
-
-      gallery: ["", "", "", "", ""],
+      gallery: [rental1, rental2, rental3, rental4, rental5, rental6],
     },
   ];
 
@@ -113,7 +82,10 @@ const VehicleRental: React.FC = () => {
 
   return (
     <>
-      <section id="rental" className="py-16 lg:py-24 bg-cloud-light">
+      <section
+        id="rental"
+        className="py-16 lg:py-24 bg-cloud-light w-full mx-auto"
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="flex items-center mb-12 lg:mb-16 animate-on-scroll">
@@ -139,11 +111,11 @@ const VehicleRental: React.FC = () => {
           </div>
 
           {/* Vehicles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 lg:mb-16">
+          <div className="flex gap-8 mb-12 lg:mb-16 mx-auto w-full">
             {vehicles.map((vehicle, index) => (
               <div
                 key={vehicle.id}
-                className={`group cursor-pointer animate-on-scroll-scale animate-stagger-${Math.min(
+                className={`group cursor-pointer max-w-md mx-auto animate-on-scroll-scale animate-stagger-${Math.min(
                   index + 1,
                   4
                 )}`}
@@ -269,25 +241,6 @@ const VehicleRental: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="text-center animate-on-scroll">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                const message = encodeURIComponent(
-                  "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
-                );
-                window.open(
-                  `https://wa.me/94779941056?text=${message}`,
-                  "_blank"
-                );
-              }}
-            >
-              Contact for Rental Inquiry
-            </Button>
           </div>
 
           {/* Bottom decorative line */}

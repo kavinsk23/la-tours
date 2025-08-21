@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
 import hambantotaImg from "../../assets/images/hambantota.jpg";
 import kataragamaImg from "../../assets/images/kataragama.jpg";
 import tangalleImg from "../../assets/images/tangalle.jpg";
@@ -14,6 +13,10 @@ import Button from "../common/Button";
 
 const HeroSection: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const isDragging = useRef(false);
 
   // Hero slides data
   const slides = [
@@ -58,34 +61,31 @@ const HeroSection: React.FC = () => {
       categories: ["Marine", "Turtles", "Diving", "Colonial"],
     },
     {
-      id: 3,
+      id: 6,
       title: "Ella Adventure & Tea Country",
       description:
         "Journey through Ella's breathtaking hill country with visits to iconic Rawana Waterfall and mystical caves. Hike to Little Adams Peak for panoramic views, cross the famous Nine Arch Bridge, and experience authentic train travel from Demodara to Ella through lush tea plantations while learning about traditional tea cultivation.",
       image: ellaImg,
       categories: ["Adventure", "Tea", "Hiking", "Railway"],
     },
-
     {
-      id: 6,
+      id: 7,
       title: "Nuwara Eliya Highland Paradise",
       description:
         "Explore 'Little England' with its colonial charm, from bustling Nuwara Eliya town to the dramatic World's End cliff. Visit Victoria Flower Gardens, enjoy Gregory Lake boat rides, discover the historic Gampola Tunnel, and climb Ambuluwawa Tower while touring authentic tea factories in the misty highlands.",
       image: nuwaraeliyaImg,
       categories: ["Highland", "Colonial", "Tea", "Scenic"],
     },
-
     {
-      id: 2,
+      id: 8,
       title: "Kandy Cultural Heritage Journey",
       description:
         "Immerse yourself in Sri Lanka's cultural heart with visits to the sacred Temple of the Tooth Relic and ancient Dambulla Cave Temples. Explore the majestic Sigiriya Rock Fortress, climb Pidurangala for sunrise views, and experience thrilling Habarana jeep safaris through diverse wildlife habitats.",
       image: kandyImg,
       categories: ["Cultural", "Heritage", "Safari", "Spiritual"],
     },
-
     {
-      id: 5,
+      id: 9,
       title: "Trincomalee Coastal Paradise",
       description:
         "Experience stunning Nilaveli beach sunsets and exhilarating sea boat adventures along pristine coastlines. Explore historic Trincomalee town, visit the ancient Koneshwaram Temple, relax on exclusive Marble Beach, and cross the magnificent Kinniya Bridge - Sri Lanka's longest span connecting coastal communities.",
@@ -93,6 +93,7 @@ const HeroSection: React.FC = () => {
       categories: ["Coastal", "Beaches", "Historic", "Temple"],
     },
   ];
+
   // Auto scroll functionality
   useEffect(() => {
     const interval = setInterval(() => {
@@ -102,16 +103,56 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  // Touch and mouse event handlers
+  const handleStart = (clientX: number, clientY: number) => {
+    startX.current = clientX;
+    startY.current = clientY;
+    isDragging.current = true;
+  };
+
+  const handleEnd = (clientX: number, clientY: number) => {
+    if (!isDragging.current) return;
+
+    const deltaX = startX.current - clientX;
+    const deltaY = Math.abs(startY.current - clientY);
+    const threshold = 50;
+
+    // Only trigger slide change if horizontal swipe is more significant than vertical
+    if (Math.abs(deltaX) > threshold && Math.abs(deltaX) > deltaY) {
+      if (deltaX > 0) {
+        // Swipe left - next slide
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      } else {
+        // Swipe right - previous slide
+        setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+      }
+    }
+
+    isDragging.current = false;
+  };
+
+  // Touch events
+  const handleTouchStart = (e: React.TouchEvent) => {
+    const touch = e.touches[0];
+    handleStart(touch.clientX, touch.clientY);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const touch = e.changedTouches[0];
+    handleEnd(touch.clientX, touch.clientY);
+  };
+
+  // Mouse events
+  const handleMouseDown = (e: React.MouseEvent) => {
+    handleStart(e.clientX, e.clientY);
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    handleEnd(e.clientX, e.clientY);
+  };
+
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const goToNext = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
 
   const currentSlideData = slides[currentSlide];
@@ -119,8 +160,13 @@ const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative overflow-hidden"
+      className="relative overflow-hidden cursor-grab active:cursor-grabbing"
       style={{ height: "calc(100vh - 64px)" }}
+      ref={containerRef}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
     >
       {/* Background Images Container */}
       <div className="absolute inset-0">
@@ -145,7 +191,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col">
+      <div className="relative z-10 h-full flex flex-col pointer-events-none">
         {/* Main Content */}
         <div className="flex-1 flex items-center px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
@@ -162,7 +208,7 @@ const HeroSection: React.FC = () => {
               </h1>
 
               {/* Get In Touch Button with Enhanced Styling */}
-              <div className="relative flex justify-center sm:justify-start">
+              <div className="relative flex justify-center sm:justify-start pointer-events-auto">
                 <Button
                   variant="primary"
                   size="lg"
@@ -184,21 +230,12 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="relative z-20 p-3 sm:p-6 lg:p-8">
+        <div className="relative z-20 p-3 sm:p-6 lg:p-8 pointer-events-auto">
           {/* Mobile Layout - Stack vertically */}
           <div className="block md:hidden space-y-4">
-            {/* Navigation Controls - Mobile */}
+            {/* Slide Indicators - Mobile */}
             <div className="flex justify-center">
               <div className="flex items-center gap-3 p-2 rounded-xl bg-black/20 backdrop-blur-md border border-white/10">
-                <button
-                  onClick={goToPrevious}
-                  className="w-10 h-10 rounded-full bg-white/25 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-
-                {/* Slide Indicators - Mobile */}
                 <div className="flex gap-1.5">
                   {slides.map((_, index) => (
                     <button
@@ -213,14 +250,6 @@ const HeroSection: React.FC = () => {
                     />
                   ))}
                 </div>
-
-                <button
-                  onClick={goToNext}
-                  className="w-10 h-10 rounded-full bg-white/25 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
               </div>
             </div>
 
@@ -253,16 +282,8 @@ const HeroSection: React.FC = () => {
 
           {/* Desktop Layout - Side by side */}
           <div className="hidden md:flex justify-between items-end">
-            {/* Bottom Left - Navigation Arrows with Enhanced Backdrop */}
+            {/* Bottom Left - Slide Indicators Only */}
             <div className="flex items-center gap-4 p-3 rounded-2xl bg-black/20 backdrop-blur-md border border-white/10">
-              <button
-                onClick={goToPrevious}
-                className="w-12 h-12 rounded-full bg-white/25 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-
               {/* Slide Indicators */}
               <div className="flex gap-2">
                 {slides.map((_, index) => (
@@ -278,14 +299,6 @@ const HeroSection: React.FC = () => {
                   />
                 ))}
               </div>
-
-              <button
-                onClick={goToNext}
-                className="w-12 h-12 rounded-full bg-white/25 hover:bg-white/40 backdrop-blur-sm text-white flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
             </div>
 
             {/* Bottom Right - Description and Categories with Enhanced Backdrop */}

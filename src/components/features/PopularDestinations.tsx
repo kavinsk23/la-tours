@@ -324,6 +324,7 @@ const PopularDestinations: React.FC = () => {
         ella26,
         ella27,
         ella28,
+        ella29,
         ella210,
       ],
     },

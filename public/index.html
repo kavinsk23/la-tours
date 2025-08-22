@@ -1,36 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Basic Meta Tags -->
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      LA Tours Sri Lanka - Premium Travel Experiences & Tour Packages
+    </title>
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Discover Sri Lanka with LA Tours. Premium travel packages, cultural tours, wildlife safaris, and authentic experiences across beautiful Sri Lanka. Book your dream vacation today."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+    <meta
+      name="keywords"
+      content="Sri Lanka tours, travel packages, wildlife safari, cultural tours, vacation packages, Ceylon travel, Colombo tours, Kandy tours, LA Tours, Sri Lanka travel agency"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="author" content="LA Tours Sri Lanka" />
+    <meta name="geo.region" content="LK" />
+    <meta name="geo.placename" content="Sri Lanka" />
+    <meta name="geo.position" content="7.8731;80.7718" />
+    <meta name="ICBM" content="7.8731, 80.7718" />
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>LA Tours</title>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://latourssrilanka.com/" />
+    <meta
+      property="og:title"
+      content="LA Tours Sri Lanka - Premium Travel Experiences & Tour Packages"
+    />
+    <meta
+      property="og:description"
+      content="Discover Sri Lanka with LA Tours. Premium travel packages, cultural tours, wildlife safaris, and authentic experiences across beautiful Sri Lanka."
+    />
+    <meta
+      property="og:image"
+      content="https://latourssrilanka.com/og-image.jpg"
+    />
+    <meta property="og:site_name" content="LA Tours Sri Lanka" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://latourssrilanka.com/" />
+    <meta
+      property="twitter:title"
+      content="LA Tours Sri Lanka - Premium Travel Experiences & Tour Packages"
+    />
+    <meta
+      property="twitter:description"
+      content="Discover Sri Lanka with LA Tours. Premium travel packages, cultural tours, wildlife safaris, and authentic experiences."
+    />
+    <meta
+      property="twitter:image"
+      content="https://latourssrilanka.com/og-image.jpg"
+    />
+
+    <!-- Additional SEO Tags -->
+    <link rel="canonical" href="https://latourssrilanka.com/" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "LA Tours Sri Lanka",
+        "url": "https://latourssrilanka.com",
+        "logo": "https://latourssrilanka.com/logo.png",
+        "description": "Premium travel agency offering tour packages, cultural tours, and wildlife safaris in Sri Lanka",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "LK",
+          "addressRegion": "Western Province",
+          "addressLocality": "Negombo"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "7.8731",
+          "longitude": "80.7718"
+        },
+        "sameAs": [
+          "https://www.facebook.com/latourssrilanka",
+          "https://www.instagram.com/latourssrilanka",
+          "https://www.tripadvisor.com/latourssrilanka"
+        ],
+        "serviceType": "Travel Agency",
+        "areaServed": "Sri Lanka",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Tour Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "TouristTrip",
+                "name": "Cultural Tours"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "TouristTrip",
+                "name": "Wildlife Safaris"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "TouristTrip",
+                "name": "Beach Holidays"
+              }
+            }
+          ]
+        }
+      }
+    </script>
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   </head>
   <body>
     <div id="root"></div>

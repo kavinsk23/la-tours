@@ -12,15 +12,17 @@ import VehicleRental from "./components/features/VehicleRental";
 
 function App() {
   return (
-    <div className="App w-screen max-w-full overflow-x-hidden">
+    <div className="App">
       <Navbar />
-      <HeroSection />
-      <IntroductionSection />
-      <WhyChooseUs />
-      <PopularDestinations />
-      <VehicleRental />
-      <HeroCTASection />
-      <Footer />
+      <div className="w-full max-w-full overflow-x-hidden">
+        <HeroSection />
+        <IntroductionSection />
+        <WhyChooseUs />
+        <PopularDestinations />
+        <VehicleRental />
+        <HeroCTASection />
+        <Footer />
+      </div>
       <ScrollToTop />
     </div>
   );

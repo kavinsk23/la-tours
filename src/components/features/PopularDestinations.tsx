@@ -456,16 +456,16 @@ const PopularDestinations: React.FC = () => {
 
   return (
     <>
-      <section id="destinations" className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="destinations" className="py-16 bg-white lg:py-24">
+        <div className="container px-4 mx-auto sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="flex items-center justify-between mb-12 lg:mb-16 animate-on-scroll">
             <div>
-              <h2 className="text-3xl lg:text-4xl xl:text-5xl font-sans font-light text-midnight leading-tight mb-4">
+              <h2 className="mb-4 font-sans text-3xl font-light leading-tight lg:text-4xl xl:text-5xl text-midnight">
                 Popular{" "}
-                <span className="text-steel font-light">Destinations</span>
+                <span className="font-light text-steel">Destinations</span>
               </h2>
-              <p className="text-lg text-steel max-w-2xl font-sans leading-relaxed">
+              <p className="max-w-2xl font-sans text-lg leading-relaxed text-steel">
                 Discover popular destinations, offering stunning landscapes,
                 vibrant cultures, and unforgettable experiences for every
                 traveler.
@@ -474,7 +474,7 @@ const PopularDestinations: React.FC = () => {
           </div>
 
           {/* Destinations Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 lg:mb-16">
+          <div className="grid grid-cols-1 gap-8 mb-12 md:grid-cols-2 lg:grid-cols-3 lg:mb-16">
             {destinations.map((destination, index) => (
               <div
                 key={destination.id}
@@ -492,21 +492,21 @@ const PopularDestinations: React.FC = () => {
                     <img
                       src={destination.image}
                       alt={destination.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                     />
                   )}
                   {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent group-hover:opacity-100"></div>
 
                   {/* Gallery indicator */}
-                  <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+                  <div className="absolute px-2 py-1 text-xs text-white rounded-full top-3 right-3 bg-black/60">
                     {destination.gallery.length} photos
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-3">
-                  <h3 className="text-xl lg:text-xl font-sans font-medium text-midnight group-hover:text-ceylon-600 transition-colors duration-300">
+                  <h3 className="font-sans text-xl font-medium transition-colors duration-300 lg:text-xl text-midnight group-hover:text-ceylon-600">
                     {destination.title}
                   </h3>
 
@@ -515,17 +515,17 @@ const PopularDestinations: React.FC = () => {
                     <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                       {destination.locations.map((location, idx) => (
                         <div key={idx} className="flex items-start gap-2">
-                          <span className="text-ceylon-500 text-xs mt-1 flex-shrink-0">
+                          <span className="flex-shrink-0 mt-1 text-xs text-ceylon-500">
                             •
                           </span>
-                          <span className="text-steel font-sans text-xs leading-relaxed">
+                          <span className="font-sans text-xs leading-relaxed text-steel">
                             {location}
                           </span>
                         </div>
                       ))}
                     </div>
                     {/* Book Now Button */}
-                    <div className="pt-2 transform translate-y-2 transition-all duration-300 mt-auto absolute bottom-0">
+                    <div className="absolute bottom-0 pt-2 mt-auto transition-all duration-300 transform translate-y-2">
                       <div className="flex gap-3">
                         <Button
                           variant="primary"
@@ -552,7 +552,7 @@ const PopularDestinations: React.FC = () => {
                         </Button>
                       </div>
                     </div>
-                    <div className="pt-2 transform translate-y-2 transition-all duration-300 mt-auto invisible">
+                    <div className="invisible pt-2 mt-auto transition-all duration-300 transform translate-y-2">
                       <div className="flex gap-3">
                         <Button
                           variant="primary"
@@ -585,27 +585,8 @@ const PopularDestinations: React.FC = () => {
             ))}
           </div>
 
-          {/* Bottom CTA */}
-          <div className="text-center animate-on-scroll">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => {
-                const message = encodeURIComponent(
-                  "Hi! I'm interested in booking a tour with LA Tours. Could you please provide more information?"
-                );
-                window.open(
-                  `https://wa.me/94779941056?text=${message}`,
-                  "_blank"
-                );
-              }}
-            >
-              Book Now
-            </Button>
-          </div>
-
           {/* Bottom decorative line */}
-          <div className="mt-16 lg:mt-24 flex justify-center">
+          <div className="flex justify-center mt-16 lg:mt-24">
             <div className="w-24 h-px bg-gradient-to-r from-transparent via-ceylon-300 to-transparent"></div>
           </div>
         </div>

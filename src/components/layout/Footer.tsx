@@ -1,5 +1,13 @@
 import React, { useState, ReactNode } from "react";
-import { Facebook, Instagram, MessageCircle, Send } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  MessageCircle,
+  Send,
+  Phone,
+  Mail,
+  MapPin,
+} from "lucide-react";
 
 interface NavLinkProps {
   href: string;
@@ -60,19 +68,19 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer id="footer" className="bg-cloud text-midnight-dark shadow-sm">
-      <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+    <footer id="footer" className="shadow-sm bg-cloud text-midnight-dark">
+      <div className="container px-3 mx-auto sm:px-4 lg:px-8">
         {/* Top Section - Same structure as navbar */}
-        <div className="flex items-center justify-between h-14 sm:h-16 py-12 lg:py-16">
+        <div className="flex items-center justify-between py-12 h-14 sm:h-16 lg:py-16">
           {/* Mobile menu button */}
           <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-midnight-dark hover:text-ceylon-500 focus:outline-none p-2 rounded-md hover:bg-ceylon-50 transition-colors"
+              className="p-2 transition-colors rounded-md text-midnight-dark hover:text-ceylon-500 focus:outline-none hover:bg-ceylon-50"
               aria-label="Toggle menu"
             >
               <svg
-                className="h-5 w-5 sm:h-6 sm:w-6"
+                className="w-5 h-5 sm:h-6 sm:w-6"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -97,8 +105,8 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Left side - Tagline (hidden on mobile) */}
-          <div className="hidden md:flex lg:space-x-8 md:space-x-4 flex-col">
-            <h3 className="text-lg lg:text-2xl font-sans font-light text-midnight leading-tight">
+          <div className="flex-col hidden md:flex lg:space-x-8 md:space-x-4">
+            <h3 className="font-sans text-lg font-light leading-tight lg:text-2xl text-midnight">
               Explore Nature's <span className="text-steel">Wonders</span>
               <br />
               <span className="text-steel">with Expert Guidance</span>
@@ -107,47 +115,58 @@ const Footer: React.FC = () => {
 
           {/* Center logo - Same as navbar */}
           <div className="flex-shrink-0 mx-auto md:mx-0">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans font-black text-ceylon-700 tracking-wide sm:tracking-widest uppercase px-4">
+            <h1 className="px-4 font-sans text-lg font-black tracking-wide uppercase sm:text-xl md:text-2xl lg:text-3xl text-ceylon-700 sm:tracking-widest">
               LA TOURS
             </h1>
-          </div>
-
-          {/* Right side - Contact info (hidden on mobile) */}
-          <div className="hidden md:flex lg:space-x-8 md:space-x-4 flex-col text-right">
-            <div className="space-y-1 mb-1">
-              <p className="text-midnight font-sans text-sm">Hambantota </p>
-              <p className="text-midnight font-sans text-sm">Sri Lanka</p>
-            </div>
-            <p className="text-midnight font-sans text-sm font-medium">
-              <a href="tel:+94768668109">(+94) 76 866 8109</a>
-            </p>
           </div>
 
           {/* Mobile overlay to close menu */}
           {isOpen && (
             <div
-              className="fixed inset-0 bg-black bg-opacity-25 md:hidden z-40"
+              className="fixed inset-0 z-40 bg-black bg-opacity-25 md:hidden"
               onClick={() => setIsOpen(false)}
             />
           )}
         </div>
 
         {/* Contact Info & Tagline - Always visible on mobile */}
-        <div className="md:hidden py-6 space-y-4">
+        <div className="py-6 space-y-4 md:hidden">
           {/* Contact Info Mobile */}
-          <div className="space-y-1 px-3 py-3 bg-ceylon-50 rounded-lg">
-            <div className="space-y-1 mb-1">
-              <p className="text-midnight font-sans text-sm">Hambantota </p>
-              <p className="text-midnight font-sans text-sm">Sri Lanka</p>
+          <div className="px-3 py-3 space-y-3 rounded-lg bg-ceylon-50">
+            <div className="flex items-center space-x-3">
+              <MapPin className="w-4 h-4 text-ceylon-600" />
+              <div>
+                <p className="font-sans text-sm text-midnight">
+                  Hambantota, Sri Lanka
+                </p>
+              </div>
             </div>
-            <p className="text-midnight font-sans text-sm font-medium">
-              <a href="tel:+94768668109">(+94) 76 866 8109</a>
-            </p>
+
+            <div className="flex items-center space-x-3">
+              <Phone className="w-4 h-4 text-ceylon-600" />
+              <div className="space-y-1">
+                <p className="font-sans text-sm text-midnight">
+                  <a href="tel:+94768668109">(+94) 76 866 8109</a>
+                </p>
+                <p className="font-sans text-sm text-midnight">
+                  <a href="tel:+94779941056">(+94) 77 994 1056</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center space-x-3">
+              <Mail className="w-4 h-4 text-ceylon-600" />
+              <p className="font-sans text-sm text-midnight">
+                <a href="mailto:latourssrilanka@gmail.com">
+                  latourssrilanka@gmail.com
+                </a>
+              </p>
+            </div>
           </div>
 
           {/* Tagline Mobile */}
           <div className="px-3 py-3">
-            <h3 className="text-base font-sans font-light text-midnight leading-tight">
+            <h3 className="font-sans text-base font-light leading-tight text-midnight">
               Explore Nature's <span className="text-steel">Wonders</span> with{" "}
               <span className="text-steel">Expert Guidance</span>
             </h3>
@@ -156,11 +175,11 @@ const Footer: React.FC = () => {
 
         {/* Mobile menu - Same structure as navbar */}
         {isOpen && (
-          <div className="md:hidden absolute left-0 right-0 bg-cloud border-t border-ceylon-200 shadow-lg z-50">
+          <div className="absolute left-0 right-0 z-50 border-t shadow-lg md:hidden bg-cloud border-ceylon-200">
             <div className="px-3 py-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto">
               {/* Main Navigation */}
               <div className="space-y-1">
-                <div className="text-xs font-semibold text-ceylon-600 uppercase tracking-wide px-3 py-1 border-b border-ceylon-100 mb-2">
+                <div className="px-3 py-1 mb-2 text-xs font-semibold tracking-wide uppercase border-b text-ceylon-600 border-ceylon-100">
                   Main Menu
                 </div>
                 <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
@@ -178,8 +197,8 @@ const Footer: React.FC = () => {
               </div>
 
               {/* Secondary Navigation */}
-              <div className="space-y-1 pt-3 border-t border-ceylon-100">
-                <div className="text-xs font-semibold text-ceylon-600 uppercase tracking-wide px-3 py-1 mb-2">
+              <div className="pt-3 space-y-1 border-t border-ceylon-100">
+                <div className="px-3 py-1 mb-2 text-xs font-semibold tracking-wide uppercase text-ceylon-600">
                   Quick Access
                 </div>
                 <MobileNavLink href="#" onClick={() => setIsOpen(false)}>
@@ -200,7 +219,7 @@ const Footer: React.FC = () => {
         )}
 
         {/* Desktop Navigation - Visible only on desktop */}
-        <div className="hidden md:flex justify-center py-8">
+        <div className="justify-center hidden py-8 md:flex">
           <nav className="flex space-x-8">
             <NavLink href="#">Home</NavLink>
             <NavLink href="#">Destination</NavLink>
@@ -211,6 +230,49 @@ const Footer: React.FC = () => {
             <NavLink href="#">Pricing</NavLink>
             <NavLink href="#">Account</NavLink>
           </nav>
+        </div>
+
+        {/* Contact Information Section - Desktop */}
+        <div className="hidden py-8 border-t md:block border-steel/20">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="flex items-center justify-center p-4 space-x-4">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-ceylon-100">
+                <MapPin className="w-5 h-5 text-ceylon-600" />
+              </div>
+              <div>
+                <p className="font-sans text-sm font-medium text-midnight">
+                  Hambantota, Sri Lanka
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 space-x-4">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-ceylon-100">
+                <Phone className="w-5 h-5 text-ceylon-600" />
+              </div>
+              <div className="space-y-1">
+                <p className="font-sans text-sm font-medium text-midnight">
+                  <a href="tel:+94768668109">(+94) 76 866 8109</a>
+                </p>
+                <p className="font-sans text-sm font-medium text-midnight">
+                  <a href="tel:+94779941056">(+94) 77 994 1056</a>
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center p-4 space-x-4">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-ceylon-100">
+                <Mail className="w-5 h-5 text-ceylon-600" />
+              </div>
+              <div>
+                <p className="font-sans text-sm font-medium text-midnight">
+                  <a href="mailto:latourssrilanka@gmail.com">
+                    latourssrilanka@gmail.com
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Social Media Icons */}
@@ -233,14 +295,14 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Section - Copyright & Legal */}
-        <div className="flex flex-col lg:flex-row justify-between items-center pt-8 pb-6 border-t border-steel/20">
-          <p className="text-midnight font-sans text-sm mb-4 lg:mb-0">
+        <div className="flex flex-col items-center justify-between pt-8 pb-6 border-t lg:flex-row border-steel/20">
+          <p className="mb-4 font-sans text-sm text-midnight lg:mb-0">
             Website by{" "}
             <a
               href="https://www.kavinsk.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-ceylon-600 underli hover:text-ceylon-700 transition-colors duration-300 font-medium"
+              className="font-medium transition-colors duration-300 text-ceylon-600 underli hover:text-ceylon-700"
             >
               Kavin SK.
             </a>{" "}
@@ -256,7 +318,7 @@ const Footer: React.FC = () => {
 const NavLink: React.FC<NavLinkProps> = ({ href, children }) => (
   <a
     href={href}
-    className="text-sm lg:text-base font-sans font-medium text-midnight-dark hover:text-ceylon-500 transition-colors duration-300 relative group py-2 text-nowrap"
+    className="relative py-2 font-sans text-sm font-medium transition-colors duration-300 lg:text-base text-midnight-dark hover:text-ceylon-500 group text-nowrap"
   >
     {children}
     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-ceylon-500 transition-all duration-300 group-hover:w-full"></span>
@@ -272,7 +334,7 @@ const MobileNavLink: React.FC<NavLinkProps & { onClick?: () => void }> = ({
   <a
     href={href}
     onClick={onClick}
-    className="block px-3 py-3 rounded-lg text-base font-medium text-midnight-dark hover:text-ceylon-500 hover:bg-ceylon-50 transition-all duration-200 active:bg-ceylon-100"
+    className="block px-3 py-3 text-base font-medium transition-all duration-200 rounded-lg text-midnight-dark hover:text-ceylon-500 hover:bg-ceylon-50 active:bg-ceylon-100"
   >
     {children}
   </a>

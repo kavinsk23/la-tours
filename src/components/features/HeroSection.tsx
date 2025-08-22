@@ -179,7 +179,7 @@ const HeroSection: React.FC = () => {
           >
             {/* Background image */}
             <div
-              className="w-full h-full bg-gradient-to-br from-tea-green-400 via-ceylon-500 to-midnight-light bg-cover bg-center"
+              className="w-full h-full bg-center bg-cover bg-gradient-to-br from-tea-green-400 via-ceylon-500 to-midnight-light"
               style={{
                 backgroundImage: slide.image ? `url(${slide.image})` : "none",
               }}
@@ -191,14 +191,14 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col pointer-events-none">
+      <div className="relative z-10 flex flex-col h-full pointer-events-none">
         {/* Main Content */}
-        <div className="flex-1 flex items-center px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center flex-1 px-4 sm:px-6 lg:px-8">
           <div className="container mx-auto">
             <div className="max-w-4xl mx-auto lg:mx-0">
               {/* Main Title with Enhanced Styling */}
               <h1
-                className="text-white font-display font-bold leading-tight mb-4 sm:mb-6 animate-fade-in-up text-center sm:text-left"
+                className="mb-4 font-bold leading-tight text-center text-white font-display sm:mb-6 animate-fade-in-up sm:text-left"
                 style={{
                   fontSize: "clamp(1.8rem, 6vw, 6rem)",
                   lineHeight: "clamp(2rem, 6.5vw, 6.5rem)",
@@ -208,7 +208,7 @@ const HeroSection: React.FC = () => {
               </h1>
 
               {/* Get In Touch Button with Enhanced Styling */}
-              <div className="relative flex justify-center sm:justify-start pointer-events-auto">
+              <div className="relative flex justify-center pointer-events-auto sm:justify-start">
                 <Button
                   variant="primary"
                   size="lg"
@@ -230,12 +230,12 @@ const HeroSection: React.FC = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="relative z-20 p-3 sm:p-6 lg:p-8 pointer-events-auto">
+        <div className="relative z-20 p-3 pointer-events-auto sm:p-6 lg:p-8">
           {/* Mobile Layout - Stack vertically */}
-          <div className="block md:hidden space-y-4">
+          <div className="block space-y-4 md:hidden">
             {/* Slide Indicators - Mobile */}
             <div className="flex justify-center">
-              <div className="flex items-center gap-3 p-2 rounded-xl bg-black/20 backdrop-blur-md border border-white/10">
+              <div className="flex items-center gap-3 p-2 border rounded-xl bg-black/20 backdrop-blur-md border-white/10">
                 <div className="flex gap-1.5">
                   {slides.map((_, index) => (
                     <button
@@ -254,10 +254,10 @@ const HeroSection: React.FC = () => {
             </div>
 
             {/* Description - Mobile */}
-            <div className="mx-auto max-w-sm">
-              <div className="bg-black/30 backdrop-blur-md rounded-xl p-4 border border-white/10 shadow-2xl text-center">
+            <div className="max-w-sm mx-auto">
+              <div className="p-4 text-center border shadow-2xl bg-black/30 backdrop-blur-md rounded-xl border-white/10">
                 <p
-                  className="text-white text-xs leading-relaxed mb-3 animate-fade-in-up"
+                  className="mb-3 text-xs leading-relaxed text-white animate-fade-in-up"
                   style={{
                     textShadow: "1px 2px 4px rgba(0,0,0,0.8)",
                   }}
@@ -281,9 +281,9 @@ const HeroSection: React.FC = () => {
           </div>
 
           {/* Desktop Layout - Side by side */}
-          <div className="hidden md:flex justify-between items-end">
+          <div className="items-end justify-between hidden md:flex">
             {/* Bottom Left - Slide Indicators Only */}
-            <div className="flex items-center gap-4 p-3 rounded-2xl bg-black/20 backdrop-blur-md border border-white/10">
+            <div className="flex items-center gap-4 p-3 border rounded-2xl bg-black/20 backdrop-blur-md border-white/10">
               {/* Slide Indicators */}
               <div className="flex gap-2">
                 {slides.map((_, index) => (
@@ -304,10 +304,10 @@ const HeroSection: React.FC = () => {
             {/* Bottom Right - Description and Categories with Enhanced Backdrop */}
             <div className="max-w-md text-right">
               {/* Enhanced Description Container */}
-              <div className="bg-black/30 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-2xl">
+              <div className="p-6 border shadow-2xl bg-black/30 backdrop-blur-md rounded-2xl border-white/10">
                 {/* Description Text */}
                 <p
-                  className="text-white text-sm font-sans mb-4 leading-relaxed animate-fade-in-up"
+                  className="mb-4 font-sans text-sm leading-relaxed text-white animate-fade-in-up"
                   style={{
                     textShadow: "1px 2px 4px rgba(0,0,0,0.8)",
                   }}
@@ -320,7 +320,7 @@ const HeroSection: React.FC = () => {
                   {currentSlideData.categories.map((category, index) => (
                     <button
                       key={index}
-                      className="px-4 py-2 bg-white bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm text-white text-xs font-sans font-medium rounded-full transition-all duration-300 hover:scale-105 border border-white border-opacity-30"
+                      className="px-4 py-2 font-sans text-xs font-medium text-white transition-all duration-300 bg-white border border-white rounded-full bg-opacity-20 hover:bg-opacity-30 backdrop-blur-sm hover:scale-105 border-opacity-30"
                     >
                       {category}
                     </button>
@@ -335,7 +335,7 @@ const HeroSection: React.FC = () => {
       {/* Enhanced Progress Bar */}
       <div className="absolute bottom-0 left-0 w-full h-1 sm:h-2 bg-black/20 backdrop-blur-sm">
         <div
-          className="h-full bg-gradient-to-r from-ceylon-400 to-ceylon-600 transition-all duration-300 shadow-lg"
+          className="h-full transition-all duration-300 shadow-lg bg-gradient-to-r from-ceylon-400 to-ceylon-600"
           style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
         />
       </div>
